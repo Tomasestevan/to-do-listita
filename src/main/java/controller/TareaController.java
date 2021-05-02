@@ -9,6 +9,8 @@ import model.TareaRepo;
 import spark.Request;
 import spark.Response;
 
+import java.util.ArrayList;
+
 public class TareaController {
     public TareaRepo Repo = new TareaRepo();
 
@@ -42,5 +44,11 @@ public class TareaController {
             String json = ow.writeValueAsString(cambio);
             return json;
         }
+        public String getTareas(Request req, Response res)throws JsonProcessingException{
+        ArrayList<Tarea> unalista = Repo.getTareas();
+            ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+            String json = ow.writeValueAsString(unalista);
+            return json;
+     }
     }
 

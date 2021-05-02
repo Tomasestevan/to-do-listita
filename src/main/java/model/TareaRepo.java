@@ -27,4 +27,7 @@ public class TareaRepo {
         } throw new RuntimeException("No Existe esa tarea");
     }
 
+    public ArrayList<Tarea> getTareas() {
+        return tareas;
+    }
 }
