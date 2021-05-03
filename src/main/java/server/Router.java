@@ -11,14 +11,13 @@ public class Router {
     public static void configure() {
         after((Filter) (request, response) -> {
             response.header("Access-Control-Allow-Origin", "*");
-            response.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");//header a la respuesta, cors protocolo standard para conectar https
-            response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-            response.header("Access-Control-Allow-Credentials", "true");
+            response.header("Access-Control-Allow-Methods", "GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS");//header a la respuesta, cors protocolo standard para conectar https
+            response.header("Access-Control-Allow-Headers", "Content-Type, Accept");
 
         });
         Spark.get("/tarea", tareitas::getTarea);
         Spark.post("/tarea", tareitas::postTarea);
-        Spark.delete("/tarea", tareitas::deleteTarea);
+        Spark.post("/deleteTarea", tareitas::deleteTarea); //aca deberia ir un .delete pero #corsproblems
         Spark.put("/tarea", tareitas::cambiarEstado);
         Spark.get("/tareas", tareitas::getTareas);
     }
