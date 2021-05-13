@@ -18,7 +18,7 @@ public class Router {
         Spark.get("/tarea", tareitas::getTarea);
         Spark.post("/tarea", tareitas::postTarea);
         Spark.post("/deleteTarea", tareitas::deleteTarea); //aca deberia ir un .delete pero #corsproblems
-        Spark.put("/tarea", tareitas::cambiarEstado);
+        Spark.post("/putTarea", tareitas::cambiarEstado);
         Spark.get("/tareas", tareitas::getTareas);
     }
 }
