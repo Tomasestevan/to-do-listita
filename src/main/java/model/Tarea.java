@@ -15,7 +15,15 @@ public class Tarea {
         Estado = unEstado;
 
     }
+    public Tarea() { }
+
     public void setEstado (String unEstado) {Estado = unEstado;}
 
 
+
+
 }
+
+//una api es una interfaz entre dos sistemas request (put post get delete) y response (tienen status code)
+// url representa un recurso particular y va de lo mas global a lo mas puntual (como puede ser dominio/usuarios/nombre) ejemplo de insta
+

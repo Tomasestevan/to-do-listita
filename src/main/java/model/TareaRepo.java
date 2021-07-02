@@ -1,5 +1,7 @@
 package model;
 
+import org.hibernate.Session;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -30,4 +32,11 @@ public class TareaRepo {
     public ArrayList<Tarea> getTareas() {
         return tareas;
     }
-}
+    //Session session = factory.openSession();
+//session.doWork(new Work() {
+  //      @Override
+    //    public void execute(Connection connection) throws SQLException {
+            //You got a connection
+    //    }
+   // });
+    }
